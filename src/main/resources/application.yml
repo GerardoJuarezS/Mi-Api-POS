@@ -1,0 +1,33 @@
+# src/main/resources/application.yml
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/apiventas
+    username: postgres
+    password: 2025
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  security:
+    user:
+      name: admin
+      password: Admin1234!
+      roles: ADMIN
+
+server:
+  port: 8080
+  servlet:
+    session:
+      cookie:
+        http-only: true
+        secure: true
+        same-site: strict
+
+jwt:
+  secret: "TuClaveSecretaMuySeguraYCompleja1234567890!@#"
+  expiration: 86400000  # 24 horas en milisegundos
+
+logging:
+  level:
+    root: INFO
+    org.springframework.security: DEBUG
